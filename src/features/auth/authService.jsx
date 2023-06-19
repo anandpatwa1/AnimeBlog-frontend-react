@@ -1,10 +1,10 @@
 
 import axios from 'axios'
 
-const api_url = 'https://anand-techdom.onrender.com/api/user'
+const api = '/api/user'
 
 const registerUser = async (user) => {
-    const res = await axios.post(api_url , user)
+    const res = await axios.post(api , user)
     if(res.data){
         localStorage.setItem('user' , JSON.stringify(res.data))
     }
