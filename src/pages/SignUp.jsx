@@ -26,8 +26,6 @@ function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(register(formData))
-        console.log(isError);
-
     }
     useEffect(() => {
         if (isError) {

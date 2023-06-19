@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Blog.css'
 
 import img1 from '../assets/image-1.png'
 import img2 from '../assets/image-2.png'
 import img3 from '../assets/image-3.png'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function Blog() {
+  const {isSuccess , isLoading , isError , message , user} = useSelector(state =>state.auth)
+	const navigate = useNavigate()
+
+	useEffect(()=>{
+		if (user === null) {
+			navigate('/login')
+		}
+
+	},[isSuccess , isLoading , isError , message , user])
   return (
     <>
 
